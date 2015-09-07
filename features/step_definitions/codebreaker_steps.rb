@@ -29,5 +29,5 @@ When /^I start a new game$/ do
 end
 
 Then /^I should see "([^"]*)"$/ do |message|
-  output2.messages.should include(message)
+  expect(output2.messages).to include(message)
 end
