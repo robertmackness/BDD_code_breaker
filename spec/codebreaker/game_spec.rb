@@ -14,7 +14,7 @@ module Codebreaker
       end
 
       it "prompts for the first guess" do
-        expect(output2).to receive(:puts).with('Enter guess:')
+        expect(output2).to receive(:puts).with('Enter 4 digit guess (between 1-6):')
         game.start('1234')
       end
     end

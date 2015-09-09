@@ -43,6 +43,13 @@ module Codebreaker
     ###################################
     describe "#number_match_count" do
 
+      context "with 1 exact match duplicated in guess" do
+        it "returns 0" do
+          marker = Marker.new('1234','1155')
+          expect(marker.number_match_count).to eql(0)
+        end
+      end
+      
       context "with no matches" do
         it "returns 0" do
           marker = Marker.new('1234','5555')
