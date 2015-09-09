@@ -16,8 +16,14 @@ module Codebreaker
     
     def guess(guess)
       marker = Marker.new(@secret, guess)
-      @output2.puts '+'*marker.exact_match_count +
-                    '-'*marker.number_match_count
+      
+      if (marker.exact_match_count + marker.number_match_count) != 0
+        @output2.puts '+'*marker.exact_match_count +
+                      '-'*marker.number_match_count
+      else
+        @output2.puts 'No matches, try again'
+      end
+
     end
 
   end
